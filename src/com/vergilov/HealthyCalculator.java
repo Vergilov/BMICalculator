@@ -53,6 +53,7 @@ public class HealthyCalculator {
         }
         return false;
     }
+
     private boolean isMen(){
         if(this.person.getGender().equalsIgnoreCase("Men")){
             return true;
