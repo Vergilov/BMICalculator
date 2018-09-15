@@ -4,12 +4,14 @@ public class Person {
     private int height;
     private int weight;
     private int age;
+    private String bodyType;
     private String gender;
 
 
-    public Person(int height, int weight, String gender, int age) {
+    public Person(int height, int weight,String bodyType,String gender, int age) {
         this.height = height;
         this.weight = weight;
+        this.bodyType=bodyType;
         this.gender=gender;
         this.age = age;
     }
@@ -33,5 +35,9 @@ public class Person {
 
     public int getAge() {
         return age;
+    }
+
+    public String getBodyType() {
+        return bodyType;
     }
 }

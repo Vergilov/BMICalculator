@@ -28,4 +28,16 @@ public class Product {
     public double getFat() {
         return fat;
     }
+
+    public double nutriesToCalories(){
+        System.out.println("Calories of "+getName());
+        double fatCalories=this.fat*9.0;
+        System.out.println("Fat: "+fatCalories);
+        double carbohydratesCalories=this.carbohydrantes*4.0;
+        System.out.println("Carbo: "+carbohydratesCalories);
+        double proteinCalories=this.protein*4.0;
+        System.out.println("Protein: "+proteinCalories);
+
+        return proteinCalories+fatCalories+carbohydratesCalories;
+    }
 }
