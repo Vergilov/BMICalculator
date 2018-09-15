@@ -3,17 +3,15 @@ package com.vergilov;
 public class Person {
     private int height;
     private int weight;
-    private int year;
-    private BodyType bodyType;
+    private int age;
     private String gender;
 
 
-    public Person(int height, int weight, String gender,BodyType bodyType,int year) {
+    public Person(int height, int weight, String gender, int age) {
         this.height = height;
         this.weight = weight;
         this.gender=gender;
-        this.bodyType=bodyType;
-        this.year=year;
+        this.age = age;
     }
 
 
@@ -29,11 +27,11 @@ public class Person {
         return weight;
     }
 
-    public BodyType getBodyType() {
-        return bodyType;
-    }
-
     public String getGender() {
         return gender;
+    }
+
+    public int getAge() {
+        return age;
     }
 }
