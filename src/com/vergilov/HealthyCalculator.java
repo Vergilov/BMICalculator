@@ -2,7 +2,6 @@ package com.vergilov;
 
 
 public class HealthyCalculator {
-    private Person person;
     public String activity;
 
 
@@ -11,8 +10,7 @@ public class HealthyCalculator {
         double multiply(Double one, Double two);
     }
 
-    public HealthyCalculator(Person person, String activity) {
-        this.person = person;
+    public HealthyCalculator(String activity) {
         this.activity = activity;
     }
 

@@ -1,16 +1,21 @@
 package com.vergilov;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Product {
     private String name;
     private double carbohydrates;
     private double protein;
     private double fat;
+    private List<Product> productList;
 
     public Product(String name, double carbohydrates, double protein, double fat) {
         this.name = name;
         this.carbohydrates = carbohydrates;
         this.protein = protein;
         this.fat = fat;
+        productList=new ArrayList<Product>();
     }
 
     public String getName() {
@@ -42,9 +47,57 @@ public class Product {
 
     }
 
-    public double nutries() {
+    public double nutrients() {
         double nutries = getFat() + getCarbohydrates() + getProtein();
         System.out.println(this.getName() + ": " + nutries + " g");
         return nutries;
     }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public boolean add() {
+        boolean add=false;
+        if (!productList.isEmpty()) {
+            for (Product prod : productList) {
+                if(this.equals(prod)){
+                    System.out.println("Product"+this.getName()+" already exist ->"+prod.getName());
+                }
+            }
+        } else {
+            productList.add(this);
+            add=true;
+        }
+        return add;
+    }
+
+
+
+    public boolean equals(Product product1) {
+        if (this.getName() == product1.getName() &&this.getProtein() == product1.getProtein()&&this.getCarbohydrates() == product1.getCarbohydrates()&&this.getFat() == product1.getFat()) return true;
+        if (!(product1 instanceof Product)) return false;
+
+        Product product = (Product) product1;
+
+        if (Double.compare(product.carbohydrates, carbohydrates) != 0) return false;
+        if (Double.compare(product.protein, protein) != 0) return false;
+        if (Double.compare(product.fat, fat) != 0) return false;
+        return name != null ? name.equals(product.name) : product.name == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name != null ? name.hashCode() : 0;
+        temp = Double.doubleToLongBits(carbohydrates);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(protein);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(fat);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
 }

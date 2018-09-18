@@ -3,16 +3,16 @@ package com.vergilov;
 public class BMRcalculator extends HealthyCalculator {
     private Person person;
 
-    public BMRcalculator(Person person, String activity, Person person1) {
-        super(person, activity);
+    public BMRcalculator(Person person1,String activity) {
+        super(activity);
         this.person = person1;
     }
 
-    private double calculateBMR() {
+    public double calculateBMR() {
         Multiply multiple = (one, two) -> resultTwoDecimalPlaces(one * two);
         double bmr = formulaForGender();
         bmr += whatBodyType();
-        return multiple.multiply(bmr, activity());
+        return multiple.multiply(bmr, activities());
     }
 
     private double formulaForGender() {
@@ -43,7 +43,7 @@ public class BMRcalculator extends HealthyCalculator {
         return add;
     }
 
-    private double activity() {
+    private double activities() {
         double multiply = (-1.0);
         if (!(isLight() || isModerate() || isVigorous())) {
             System.out.println("WRONG ACTIVITY");
