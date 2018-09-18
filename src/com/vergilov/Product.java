@@ -29,20 +29,22 @@ public class Product {
         return fat;
     }
 
-    public double nutriesToCalories(){
-        System.out.println("Calories of "+getName());
-        double fatCalories=this.fat*9.0;
-        System.out.println("Fat: "+fatCalories);
-        double carbohydratesCalories=this.carbohydrates *4.0;
-        System.out.println("Carbo: "+carbohydratesCalories);
-        double proteinCalories=this.protein*4.0;
-        System.out.println("Protein: "+proteinCalories);
+    public void printCaloriesOfProduct() {
+        System.out.println("Calories of " + getName() + "!");
+        double fatCalories = this.fat * 9.0;
+        System.out.println("Fat: " + fatCalories);
+        double carbohydratesCalories = this.carbohydrates * 4.0;
+        System.out.println("Carbo: " + carbohydratesCalories);
+        double proteinCalories = this.protein * 4.0;
+        System.out.println("Protein: " + proteinCalories);
+        double fullMacro = fatCalories + carbohydratesCalories + proteinCalories;
+        System.out.println("Full macro=" + fullMacro);
 
-        return proteinCalories+fatCalories+carbohydratesCalories;
     }
-    public double nutries(){
-        double nutries=getFat()+getCarbohydrates()+getProtein();
-        System.out.println(this.getName()+": "+nutries+" g");
+
+    public double nutries() {
+        double nutries = getFat() + getCarbohydrates() + getProtein();
+        System.out.println(this.getName() + ": " + nutries + " g");
         return nutries;
     }
 }

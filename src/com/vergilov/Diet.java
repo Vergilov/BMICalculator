@@ -5,31 +5,16 @@ import java.util.List;
 public class Diet extends HealthyCalculator {
     private List<Product> productList;
 
-    public Diet(Person person, List<Product> productList) {
-        super(person);
+    public Diet(Person person, String activity, List<Product> productList) {
+        super(person, activity);
         this.productList = productList;
     }
 
-
-    public void brekafast() {
+    public void meal() {
         System.out.println("Breakfast should have more Fat/Protein than Carbohydrates!");
     }
 
-    public void secondBreakfast(){
-
+    public List<Product> getProductList() {
+        return productList;
     }
-
-    public void afterTraining(){
-
-    }
-
-    public void beforeTraining(){
-
-    }
-
-    public void afternoonMeal(){
-
-    }
-
-
 }
