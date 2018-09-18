@@ -2,13 +2,13 @@ package com.vergilov;
 
 public class Product {
     private String name;
-    private double carbohydrantes;
+    private double carbohydrates;
     private double protein;
     private double fat;
 
-    public Product(String name, double carbohydrantes, double protein, double fat) {
+    public Product(String name, double carbohydrates, double protein, double fat) {
         this.name = name;
-        this.carbohydrantes = carbohydrantes;
+        this.carbohydrates = carbohydrates;
         this.protein = protein;
         this.fat = fat;
     }
@@ -17,8 +17,8 @@ public class Product {
         return name;
     }
 
-    public double getCarbohydrantes() {
-        return carbohydrantes;
+    public double getCarbohydrates() {
+        return carbohydrates;
     }
 
     public double getProtein() {
@@ -33,11 +33,16 @@ public class Product {
         System.out.println("Calories of "+getName());
         double fatCalories=this.fat*9.0;
         System.out.println("Fat: "+fatCalories);
-        double carbohydratesCalories=this.carbohydrantes*4.0;
+        double carbohydratesCalories=this.carbohydrates *4.0;
         System.out.println("Carbo: "+carbohydratesCalories);
         double proteinCalories=this.protein*4.0;
         System.out.println("Protein: "+proteinCalories);
 
         return proteinCalories+fatCalories+carbohydratesCalories;
+    }
+    public double nutries(){
+        double nutries=getFat()+getCarbohydrates()+getProtein();
+        System.out.println(this.getName()+": "+nutries+" g");
+        return nutries;
     }
 }
