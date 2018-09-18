@@ -4,20 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductList<T extends Product> {
-    private List<T> productList;
+    private List<T> listOfProduct;
 
     public ProductList() {
-        productList = new ArrayList<>();
+        listOfProduct = new ArrayList<>();
     }
 
-    public List<T> getProductList() {
-        return productList;
+    public List<T> getListOfProduct() {
+        return listOfProduct;
     }
 
     public boolean add(T product) {
         boolean found = false;
-        if (!productList.isEmpty()) {
-            for (Product prod : productList) {
+        if (!listOfProduct.isEmpty()) {
+            for (Product prod : listOfProduct) {
                 if (product.equals(prod)) {
                     System.out.println("Product" + product + " already exist ->" + prod.getName());
                     found = true;
@@ -27,14 +27,14 @@ public class ProductList<T extends Product> {
         }
         if (!found) {
             System.out.println("Adding-> " + product.getName());
-            productList.add(product);
+            listOfProduct.add(product);
             found = true;
         }
         return found;
     }
 
     public void printProducts() {
-        for (Product prod : productList) {
+        for (Product prod : listOfProduct) {
             System.out.println(prod.getName()
                     + " Carbo:" + prod.getCarbohydrates()
                     + " Protein:" + prod.getProtein() +

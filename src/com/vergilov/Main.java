@@ -1,8 +1,5 @@
 package com.vergilov;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -26,7 +23,7 @@ public class Main {
         productList.printProducts();
 
 
-        HealthyCalculator calculator = new Diet("Moderate",productList.getProductList());
+        HealthyCalculator calculator = new Diet("Moderate",productList.getListOfProduct());
         HealthyCalculator bmi= new BMIcalculator(maciek,"Moderate");
 
         System.out.println(((BMIcalculator) bmi).calculateBMI());
