@@ -8,14 +8,12 @@ public class Product {
     private double carbohydrates;
     private double protein;
     private double fat;
-    private List<Product> productList;
 
     public Product(String name, double carbohydrates, double protein, double fat) {
         this.name = name;
         this.carbohydrates = carbohydrates;
         this.protein = protein;
         this.fat = fat;
-        productList=new ArrayList<Product>();
     }
 
     public String getName() {
@@ -52,26 +50,6 @@ public class Product {
         System.out.println(this.getName() + ": " + nutries + " g");
         return nutries;
     }
-
-    public List<Product> getProductList() {
-        return productList;
-    }
-
-    public boolean add() {
-        boolean add=false;
-        if (!productList.isEmpty()) {
-            for (Product prod : productList) {
-                if(this.equals(prod)){
-                    System.out.println("Product"+this.getName()+" already exist ->"+prod.getName());
-                }
-            }
-        } else {
-            productList.add(this);
-            add=true;
-        }
-        return add;
-    }
-
 
 
     public boolean equals(Product product1) {

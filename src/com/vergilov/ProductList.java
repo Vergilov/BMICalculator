@@ -10,6 +10,10 @@ public class ProductList<T extends Product> {
         productList = new ArrayList<>();
     }
 
+    public List<T> getProductList() {
+        return productList;
+    }
+
     public boolean add(T product) {
         boolean found = false;
         if (!productList.isEmpty()) {
