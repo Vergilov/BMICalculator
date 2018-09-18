@@ -18,13 +18,10 @@ public class Main {
         productList.add(hamburger);
         productList.add(cola);
         productList.add(bread);
+        productList.add(piers);
 
         HealthyCalculator calculator = new Diet(maciek, "Moderate", productList);
 
-        calculator.resultTwoDecimalPlaces(calculator.calculateBMI());
-        calculator.caloriesNeededDaily();
-        piers.printCaloriesOfProduct();
-        piers.nutries();
 
         ((Diet) calculator).meal();
 
