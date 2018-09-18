@@ -3,7 +3,7 @@ package com.vergilov;
 public class Main {
 
     public static void main(String[] args) {
-        ProductList<Product> productList=new ProductList<Product>();
+        ProductList<Product> productList=new ProductList<>();
 
         Person maciek = new Person(170, 80, "Mesomorph", "Women", 28);
 
@@ -19,17 +19,17 @@ public class Main {
         productList.add(cola);
         System.out.println("SECOND!");
         productList.add(cola);
+        productList.add(bread);
 
         productList.printProducts();
 
 
-        HealthyCalculator calculator = new Diet("Moderate",productList.getListOfProduct());
-        HealthyCalculator bmi= new BMIcalculator(maciek,"Moderate");
+        Diet calculator = new Diet("Moderate",productList.getListOfProduct());
+        BMIcalculator bmi= new BMIcalculator(maciek,"Moderate");
 
-        System.out.println(((BMIcalculator) bmi).calculateBMI());
+        System.out.println(bmi.calculateBMI());
 
-
-        ((Diet) calculator).meal();
+        calculator.meal();
 
 
     }
