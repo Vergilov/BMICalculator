@@ -8,7 +8,7 @@ public class HealthyCalculator {
 
     @FunctionalInterface
     public interface Multiply {
-        double multiply(Double one,Double two);
+        double multiply(Double one, Double two);
     }
 
     public HealthyCalculator(Person person, String activity) {
@@ -24,37 +24,48 @@ public class HealthyCalculator {
     }
 
     private double heightToMeterPowerTwo(double height) {
-        Multiply multiple=(one,two)->(one / 100) * (two / 100);
-        return multiple.multiply(height,height);
+        Multiply multiple = (one, two) -> (one / 100) * (two / 100);
+        return multiple.multiply(height, height);
     }
 
 
-    public double resultTwoDecimalPlaces(double input) {
+    private double resultTwoDecimalPlaces(double input) {
         return (double) Math.round(input * 100) / 100;
     }
 
     private double calculateBMR() {
-        double bmr;
+        Multiply multiple = (one, two) -> resultTwoDecimalPlaces(one * two);
+        double bmr = formulaForGender();
+        bmr += whatBodyType();
+        return multiple.multiply(bmr, activity());
+    }
+
+    private double formulaForGender() {
+        double formula;
         if (isWomen()) {
-            bmr = 655 + (9.6 * this.person.getWeight()) + (1.8 * this.person.getHeight()) - (4.7 * this.person.getAge());
+            formula = 655 + (9.6 * this.person.getWeight()) + (1.8 * this.person.getHeight()) - (4.7 * this.person.getAge());
         } else if (isMen()) {
-            bmr = 66 + (13.7 * this.person.getWeight()) + (5 * this.person.getHeight()) - (6.8 * this.person.getAge());
+            formula = 66 + (13.7 * this.person.getWeight()) + (5 * this.person.getHeight()) - (6.8 * this.person.getAge());
         } else {
             System.out.println("Wrong Gender!");
             return -1.0;
         }
+        return formula;
+    }
+
+    private double whatBodyType() {
+        double add;
         if (isEctomorph()) {
-            bmr += 800;
+            add = 800;
         } else if (isMesomorph()) {
-            bmr += 450;
+            add = 450;
         } else if (isEndomorph()) {
-            bmr += 300;
+            add = 300;
         } else {
             System.out.println("Wrong bodytype!");
             return -1.0;
         }
-        Multiply multiple=(one,two)->resultTwoDecimalPlaces(one*two);
-        return multiple.multiply(bmr,activity());
+        return add;
     }
 
     private double activity() {
