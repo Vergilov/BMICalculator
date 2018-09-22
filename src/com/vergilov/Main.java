@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         ProductList<Product> productList=new ProductList<>();
 
-        Person maciek = new Person(170, 80, "Mesomorph", "Women", 28);
+        Person maciek = new Person(170, 80, 50,"Mesomorph", "Women", 28);
 
         Product piers = new Product("Piers z kuraka", 12.0, 28.0, 7.0);
         Product sandwich = new Product("Kanapeczkia", 11.0, 8.0, 4.0);
@@ -23,14 +23,11 @@ public class Main {
 
         productList.printProducts();
 
-
         Diet calculator = new Diet("Moderate",productList);
         BMIcalculator bmi= new BMIcalculator(maciek,"Moderate");
 
         System.out.println(bmi.calculateBMI());
 
         calculator.meal();
-
-
     }
 }

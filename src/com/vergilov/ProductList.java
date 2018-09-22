@@ -41,5 +41,4 @@ public class ProductList<T extends Product> {
                     " Fat:" + prod.getFat());
         }
     }
-
 }

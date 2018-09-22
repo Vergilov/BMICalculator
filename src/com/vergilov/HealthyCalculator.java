@@ -44,5 +44,4 @@ public class HealthyCalculator {
 //    private double calculateFatDaily() {
 //        return resultTwoDecimalPlaces(calculateBMR() * 0.3);  //30% protein daily
 //    }
-
 }
