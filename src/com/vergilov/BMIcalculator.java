@@ -9,8 +9,8 @@ public class BMIcalculator extends HealthyCalculator {
     }
 
     public double calculateBMI() {
-        double weight = this.person.getWeight();
-        double height = this.person.getHeight();
+        double weight = this.person.getBodySize().getWeight();
+        double height = this.person.getBodySize().getHeight();
         return resultTwoDecimalPlaces(weight / heightToMeterPowerTwo(height));
     }
 }

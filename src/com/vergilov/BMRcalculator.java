@@ -18,9 +18,9 @@ public class BMRcalculator extends HealthyCalculator {
     private double formulaForGender() {
         double formula;
         if (isWomen()) {
-            formula = 655 + (9.6 * this.person.getWeight()) + (1.8 * this.person.getHeight()) - (4.7 * this.person.getAge());
+            formula = 655 + (9.6 * this.person.getBodySize().getWeight()) + (1.8 * this.person.getBodySize().getHeight()) - (4.7 * this.person.getAge());
         } else if (isMen()) {
-            formula = 66 + (13.7 * this.person.getWeight()) + (5 * this.person.getHeight()) - (6.8 * this.person.getAge());
+            formula = 66 + (13.7 * this.person.getBodySize().getWeight()) + (5 * this.person.getBodySize().getHeight()) - (6.8 * this.person.getAge());
         } else {
             System.out.println("Wrong Gender!");
             return -1.0;

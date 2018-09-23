@@ -5,7 +5,8 @@ public class Main {
     public static void main(String[] args) {
         ProductList<Product> productList=new ProductList<>();
 
-        Person maciek = new Person(170, 80, 50,"Mesomorph", "Women", 28);
+        BodySize bodysize=new BodySize(170,80,55);
+        Person maciek = new Person(bodysize,"Mesomorph", "Women", 28);
 
         Product piers = new Product("Piers z kuraka", 12.0, 28.0, 7.0);
         Product sandwich = new Product("Kanapeczkia", 11.0, 8.0, 4.0);
