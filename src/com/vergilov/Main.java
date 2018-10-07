@@ -5,9 +5,10 @@ public class Main {
     public static void main(String[] args) {
         ProductList<Product> productList=new ProductList<>();
         //ACTIVITY 3 OPTIONS: LIGHT MODERATE VIGOROUS
-        BodySize bodysize=new BodySize(170,80,55);
+        BodySize bodysize=new BodySize(170,80);
         Person maciek = new Person(bodysize,"Mesomorph", "Women", 28);
         FatCalculator fatCalculator=new FatCalculator(maciek,"Moderate");
+        BMRcalculator bmRcalculator=new BMRcalculator("Light",maciek);
 
         Product piers = new Product("Piers z kuraka", 12.0, 28.0, 7.0);
         Product sandwich = new Product("Kanapeczkia", 11.0, 8.0, 4.0);
@@ -26,6 +27,9 @@ public class Main {
 
         productList.printProducts();
         System.out.println();
+
+
+        System.out.println("BMR: "+bmRcalculator.calculateBMR());
 
         BMIcalculator bmi= new BMIcalculator(maciek,"Moderate");
         Diet calculator = new Diet("Moderate",maciek,productList);

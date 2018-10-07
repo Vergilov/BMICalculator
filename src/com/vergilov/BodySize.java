@@ -3,12 +3,11 @@ package com.vergilov;
 public class BodySize {
     private int height;
     private int weight;
-    private int waist;
 
-    public BodySize(int height, int weight, int waist) {
+
+    public BodySize(int height, int weight) {
         this.height = height;
         this.weight = weight;
-        this.waist = waist;
     }
 
     public int getHeight() {
@@ -19,7 +18,5 @@ public class BodySize {
         return weight;
     }
 
-    public int getWaist() {
-        return waist;
-    }
+
 }

@@ -7,7 +7,7 @@ public class FatCalculator extends BMIcalculator {
     }
 
     public double getPercentageBodyFat(){
-        double fat=0;
+        double fat;
         if(isMen()){
             fat=1.20*calculateBMI()+0.23*getPerson().getAge()-16.2;//1.20 × BMI + 0.23 × Age - 16.2 for male
         }else if(isWomen()){
