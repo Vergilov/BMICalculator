@@ -2,7 +2,8 @@ package com.vergilov;
 
 
 public class HealthyCalculator {
-    public String activity;
+    private String activity;
+    private Person person;
 
 
     @FunctionalInterface
@@ -10,8 +11,9 @@ public class HealthyCalculator {
         double multiply(Double one, Double two);
     }
 
-    public HealthyCalculator(String activity) {
+    public HealthyCalculator(String activity,Person person) {
         this.activity = activity;
+        this.person=person;
     }
 
 
@@ -25,7 +27,30 @@ public class HealthyCalculator {
         return (double) Math.round(input * 100) / 100;
     }
 
-//
+    public boolean isWomen() {
+        boolean isWomen = false;
+        if (this.person.getGender().equalsIgnoreCase("Women")) {
+            isWomen = true;
+        }
+        return isWomen;
+    }
+
+    public boolean isMen() {
+        boolean isMen = false;
+        if (this.person.getGender().equalsIgnoreCase("Men")) {
+            isMen = true;
+        }
+        return isMen;
+    }
+
+    public String getActivity() {
+        return activity;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+    //
 //    public void caloriesNeededDaily() {
 //        System.out.println("You need: " + calculateBMR() + " Calories:");
 //        System.out.println("Fat: " + calculateFatDaily());

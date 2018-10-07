@@ -1,11 +1,9 @@
 package com.vergilov;
 
 public class BMRcalculator extends HealthyCalculator {
-    private Person person;
 
-    public BMRcalculator(Person person1,String activity) {
-        super(activity);
-        this.person = person1;
+    public BMRcalculator(String activity,Person person) {
+        super(activity,person);
     }
 
     public double calculateBMR() {
@@ -18,9 +16,9 @@ public class BMRcalculator extends HealthyCalculator {
     private double formulaForGender() {
         double formula;
         if (isWomen()) {
-            formula = 655 + (9.6 * this.person.getBodySize().getWeight()) + (1.8 * this.person.getBodySize().getHeight()) - (4.7 * this.person.getAge());
+            formula = 655 + (9.6 * getPerson().getBodySize().getWeight()) + (1.8 * getPerson().getBodySize().getHeight()) - (4.7 * getPerson().getAge());
         } else if (isMen()) {
-            formula = 66 + (13.7 * this.person.getBodySize().getWeight()) + (5 * this.person.getBodySize().getHeight()) - (6.8 * this.person.getAge());
+            formula = 66 + (13.7 * getPerson().getBodySize().getWeight()) + (5 * getPerson().getBodySize().getHeight()) - (6.8 * getPerson().getAge());
         } else {
             System.out.println("Wrong Gender!");
             return -1.0;
@@ -59,7 +57,7 @@ public class BMRcalculator extends HealthyCalculator {
 
     private boolean isLight() {
         boolean isLight = false;
-        if (this.activity.equalsIgnoreCase("Light")) {
+        if (this.getActivity().equalsIgnoreCase("Light")) {
             isLight = true;
         }
         return isLight;
@@ -67,7 +65,7 @@ public class BMRcalculator extends HealthyCalculator {
 
     private boolean isModerate() {
         boolean isModerate = false;
-        if (this.activity.equalsIgnoreCase("Moderate")) {
+        if (this.getActivity().equalsIgnoreCase("Moderate")) {
             isModerate = true;
         }
         return isModerate;
@@ -75,32 +73,18 @@ public class BMRcalculator extends HealthyCalculator {
 
     private boolean isVigorous() {
         boolean isVigorous = false;
-        if (this.activity.equalsIgnoreCase("Vigorous")) {
+        if (this.getActivity().equalsIgnoreCase("Vigorous")) {
             isVigorous = true;
         }
         return isVigorous;
     }
 
-    private boolean isWomen() {
-        boolean isWomen = false;
-        if (this.person.getGender().equalsIgnoreCase("Women")) {
-            isWomen = true;
-        }
-        return isWomen;
-    }
 
-    private boolean isMen() {
-        boolean isMen = false;
-        if (this.person.getGender().equalsIgnoreCase("Men")) {
-            isMen = true;
-        }
-        return isMen;
-    }
 
 
     private boolean isEctomorph() {
         boolean isEctomorph = false;
-        if (this.person.getBodyType().equalsIgnoreCase("Ectomorph")) {
+        if (getPerson().getBodyType().equalsIgnoreCase("Ectomorph")) {
             isEctomorph = true;
         }
         return isEctomorph;
@@ -108,7 +92,7 @@ public class BMRcalculator extends HealthyCalculator {
 
     private boolean isEndomorph() {
         boolean isEndomorph = false;
-        if (this.person.getBodyType().equalsIgnoreCase("Endomorph")) {
+        if (getPerson().getBodyType().equalsIgnoreCase("Endomorph")) {
             isEndomorph = true;
         }
         return isEndomorph;
@@ -116,7 +100,7 @@ public class BMRcalculator extends HealthyCalculator {
 
     private boolean isMesomorph() {
         boolean isMesomorph = false;
-        if (this.person.getBodyType().equalsIgnoreCase("Mesomorph")) {
+        if (getPerson().getBodyType().equalsIgnoreCase("Mesomorph")) {
             isMesomorph = true;
         }
         return isMesomorph;

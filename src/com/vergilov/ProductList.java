@@ -19,7 +19,7 @@ public class ProductList<T extends Product> {
         if (!listOfProduct.isEmpty()) {
             for (Product prod : listOfProduct) {
                 if (product.equals(prod)) {
-                    System.out.println("Product" + product + " already exist ->" + prod.getName());
+                    System.out.println("Product" + product.getName() + " already exist ->" + prod.getName());
                     found = true;
                     break;
                 }
@@ -36,7 +36,7 @@ public class ProductList<T extends Product> {
     public void printProducts() {
         for (Product prod : listOfProduct) {
             System.out.println(prod.getName()
-                    + " Carbo: " + prod.getCarbohydrates()
+                    + "-> Carbo: " + prod.getCarbohydrates()
                     + " Protein: " + prod.getProtein() +
                     " Fat: " + prod.getFat());
         }
