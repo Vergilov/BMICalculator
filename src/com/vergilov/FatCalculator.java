@@ -7,4 +7,8 @@ public class FatCalculator extends HealthyCalculator {
         super(activity);
         this.person = person;
     }
+
+    public Person getPerson() {
+        return person;
+    }
 }

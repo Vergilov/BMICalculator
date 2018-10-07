@@ -3,7 +3,7 @@ package com.vergilov;
 public class Diet extends HealthyCalculator {
 private ProductList<Product> productList;
 
-    public Diet(String activity,ProductList<Product> productList) {
+    public Diet(ProductList<Product> productList,String activity) {
         super(activity);
         this.productList=productList;
     }

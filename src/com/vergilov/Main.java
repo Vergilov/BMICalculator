@@ -24,7 +24,7 @@ public class Main {
 
         productList.printProducts();
 
-        Diet calculator = new Diet("Moderate",productList);
+        Diet calculator = new Diet(productList,"Moderate");
         BMIcalculator bmi= new BMIcalculator(maciek,"Moderate");
 
         System.out.println(bmi.calculateBMI());

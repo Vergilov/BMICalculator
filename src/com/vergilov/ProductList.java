@@ -36,9 +36,9 @@ public class ProductList<T extends Product> {
     public void printProducts() {
         for (Product prod : listOfProduct) {
             System.out.println(prod.getName()
-                    + " Carbo:" + prod.getCarbohydrates()
-                    + " Protein:" + prod.getProtein() +
-                    " Fat:" + prod.getFat());
+                    + " Carbo: " + prod.getCarbohydrates()
+                    + " Protein: " + prod.getProtein() +
+                    " Fat: " + prod.getFat());
         }
     }
 }
