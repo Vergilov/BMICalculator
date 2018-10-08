@@ -43,6 +43,54 @@ public class HealthyCalculator {
         return isMen;
     }
 
+    public boolean isLight() {
+        boolean isLight = false;
+        if (this.getActivity().equalsIgnoreCase("Light")) {
+            isLight = true;
+        }
+        return isLight;
+    }
+
+    public boolean isModerate() {
+        boolean isModerate = false;
+        if (this.getActivity().equalsIgnoreCase("Moderate")) {
+            isModerate = true;
+        }
+        return isModerate;
+    }
+
+    public boolean isVigorous() {
+        boolean isVigorous = false;
+        if (this.getActivity().equalsIgnoreCase("Vigorous")) {
+            isVigorous = true;
+        }
+        return isVigorous;
+    }
+
+    public boolean isEctomorph() {
+        boolean isEctomorph = false;
+        if (getPerson().getBodyType().equalsIgnoreCase("Ectomorph")) {
+            isEctomorph = true;
+        }
+        return isEctomorph;
+    }
+
+    public boolean isEndomorph() {
+        boolean isEndomorph = false;
+        if (getPerson().getBodyType().equalsIgnoreCase("Endomorph")) {
+            isEndomorph = true;
+        }
+        return isEndomorph;
+    }
+
+    public boolean isMesomorph() {
+        boolean isMesomorph = false;
+        if (getPerson().getBodyType().equalsIgnoreCase("Mesomorph")) {
+            isMesomorph = true;
+        }
+        return isMesomorph;
+    }
+
     public String getActivity() {
         return activity;
     }

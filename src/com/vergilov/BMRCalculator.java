@@ -1,8 +1,8 @@
 package com.vergilov;
 
-public class BMRcalculator extends HealthyCalculator {
+public class BMRCalculator extends HealthyCalculator {
 
-    public BMRcalculator(String activity,Person person) {
+    public BMRCalculator(String activity, Person person) {
         super(activity,person);
     }
 
@@ -55,54 +55,5 @@ public class BMRcalculator extends HealthyCalculator {
         return multiply;
     }
 
-    private boolean isLight() {
-        boolean isLight = false;
-        if (this.getActivity().equalsIgnoreCase("Light")) {
-            isLight = true;
-        }
-        return isLight;
-    }
 
-    private boolean isModerate() {
-        boolean isModerate = false;
-        if (this.getActivity().equalsIgnoreCase("Moderate")) {
-            isModerate = true;
-        }
-        return isModerate;
-    }
-
-    private boolean isVigorous() {
-        boolean isVigorous = false;
-        if (this.getActivity().equalsIgnoreCase("Vigorous")) {
-            isVigorous = true;
-        }
-        return isVigorous;
-    }
-
-
-
-
-    private boolean isEctomorph() {
-        boolean isEctomorph = false;
-        if (getPerson().getBodyType().equalsIgnoreCase("Ectomorph")) {
-            isEctomorph = true;
-        }
-        return isEctomorph;
-    }
-
-    private boolean isEndomorph() {
-        boolean isEndomorph = false;
-        if (getPerson().getBodyType().equalsIgnoreCase("Endomorph")) {
-            isEndomorph = true;
-        }
-        return isEndomorph;
-    }
-
-    private boolean isMesomorph() {
-        boolean isMesomorph = false;
-        if (getPerson().getBodyType().equalsIgnoreCase("Mesomorph")) {
-            isMesomorph = true;
-        }
-        return isMesomorph;
-    }
 }
