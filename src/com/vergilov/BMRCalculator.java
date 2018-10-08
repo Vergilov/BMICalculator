@@ -55,5 +55,4 @@ public class BMRCalculator extends HealthyCalculator {
         return multiply;
     }
 
-
 }

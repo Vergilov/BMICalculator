@@ -1,6 +1,6 @@
 package com.vergilov;
 
-public class Product {
+public class Product  {
     private String name;
     private double carbohydrates;
     private double protein;
@@ -42,12 +42,6 @@ public class Product {
 
     }
 
-    public double nutrients() {
-        double nutries = getFat() + getCarbohydrates() + getProtein();
-        System.out.println(this.getName() + ": " + nutries + " g");
-        return nutries;
-    }
-
 
     public boolean equals(Product product1) {
         if (this.getName() == product1.getName() &&this.getProtein() == product1.getProtein()&&this.getCarbohydrates() == product1.getCarbohydrates()&&this.getFat() == product1.getFat()) return true;
@@ -59,6 +53,13 @@ public class Product {
         if (Double.compare(product.protein, protein) != 0) return false;
         if (Double.compare(product.fat, fat) != 0) return false;
         return name != null ? name.equals(product.name) : product.name == null;
+    }
+
+
+    public double nutrients() {
+        double nutries = getFat() + getCarbohydrates() + getProtein();
+        System.out.println(this.getName() + ": " + nutries + " g");
+        return nutries;
     }
 
     @Override
