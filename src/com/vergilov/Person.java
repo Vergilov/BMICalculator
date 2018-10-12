@@ -9,9 +9,19 @@ public class Person {
 
     public Person(BodySize bodySize, String bodyType, String gender, int age) {
         this.bodyType = bodyType;
-        this.gender = gender;
-        this.age = age;
-        this.bodySize=bodySize;
+        this.bodySize = bodySize;
+
+        if (!(gender.equalsIgnoreCase("Men") || bodyType.equalsIgnoreCase("Women"))) {
+            System.out.println("Please choose between Men/Women");
+        } else {
+            this.gender = gender;
+        }
+
+        if (age < 0) {
+            System.out.println("Age cant be negative!");
+        } else {
+            this.age = age;
+        }
     }
 
     public BodySize getBodySize() {

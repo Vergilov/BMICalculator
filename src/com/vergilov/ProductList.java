@@ -19,7 +19,7 @@ public class ProductList<T extends Product> {
         if (!listOfProduct.isEmpty()) {
             for (Product prod : listOfProduct) {
                 if (product.equals(prod)) {
-                    System.out.println("Product" + product.getName() + " already exist ->" + prod.getName());
+                    System.out.println("Product " + product.getName() + " already exist. Position ->" + listOfProduct.indexOf(prod));
                     found = true;
                     break;
                 }
