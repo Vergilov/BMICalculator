@@ -1,10 +1,11 @@
 package com.vergilov;
 
+import java.util.Scanner;
+
 public class Main {
-<<<<<<< Updated upstream
-=======
+
     private static Scanner in = new Scanner(System.in);
->>>>>>> Stashed changes
+
 
     public static void main(String[] args) {
         ProductList<Product> productList = new ProductList<>();
@@ -44,10 +45,7 @@ public class Main {
             System.out.println("Please choose between Endomorph/Mesomorph/Ectomorph");
         }
 
-<<<<<<< Updated upstream
-        System.out.println("MEAL");
-        calculator.meal();
-=======
+
         System.out.print("You Gender (Men/Women): ");
         String gender = in.next();
         System.out.print("You Age: ");
@@ -89,7 +87,6 @@ public class Main {
                 "2: Calculate Body Fat \n" +
                 "3: Calculate BMI \n" +
                 "0: Quit");
->>>>>>> Stashed changes
     }
 }
 
