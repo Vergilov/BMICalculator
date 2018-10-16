@@ -9,9 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
         ProductList<Product> productList = new ProductList<>();
-        //BodySize bodysize = new BodySize(170, 80);
-        //Person maciek = new Person(bodysize, "Mesomorph", "Women", 28);
-        //Diet calculator = new Diet("Moderate", maciek, productList);
+        BodySize bodysize = new BodySize(170, 80);
+        Person maciek = new Person(bodysize, "Mesomorph", "Women", 28);
+        Diet calculator = new Diet("Moderate",maciek ,productList);
 
         Product piers = new Product("Piers z kuraka", 12.0, 28.0, 7.0);
         Product sandwich = new Product("Kanapeczka", 11.0, 8.0, 4.0);
@@ -28,6 +28,8 @@ public class Main {
         productList.add(cola);
         //run();
         productList.printProducts();
+        productList.fullMacro();
+        calculator.summaryMeal();
     }
 
     private static Person createObjects() {

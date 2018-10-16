@@ -39,8 +39,8 @@ public class Product  {
         System.out.println("Protein: " + proteinCalories);
         double fullMacro = fatCalories + carbohydratesCalories + proteinCalories;
         System.out.println("Full macro=" + fullMacro);
-
     }
+
 
 
     public boolean equals(Product product1) {

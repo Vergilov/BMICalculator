@@ -42,6 +42,17 @@ public class ProductList<T extends Product> {
         }
     }
 
+    public void fullMacro(){
+        double summary=0;
+        for (Product prod : listOfProduct) {
+            summary+=(prod.getCarbohydrates()*4)
+                    + (prod.getProtein()*4)
+                    + (prod.getFat()*9);
+
+        }
+        System.out.println("FULL MACRO: "+summary);
+    }
+
     private int find(String name) {
         for (int i = 0; i < listOfProduct.size(); i++) {
             if (listOfProduct.get(i).getName().equals(name)) {
