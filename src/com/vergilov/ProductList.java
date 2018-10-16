@@ -35,10 +35,20 @@ public class ProductList<T extends Product> {
 
     public void printProducts() {
         for (Product prod : listOfProduct) {
-            System.out.println(prod.getName()
+            System.out.println("Position: "+find(prod.getName())+ " " + prod.getName()
                     + "-> Carbo: " + prod.getCarbohydrates()
                     + " Protein: " + prod.getProtein() +
                     " Fat: " + prod.getFat());
         }
+    }
+
+    private int find(String name) {
+        for (int i = 0; i < listOfProduct.size(); i++) {
+            if (listOfProduct.get(i).getName().equals(name)) {
+                return i;
+            }
+        }
+        System.out.println("Product cant be found!");
+        return -1;
     }
 }
