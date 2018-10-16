@@ -44,12 +44,20 @@ public class ProductList<T extends Product> {
 
     public void fullMacro(){
         double summary=0;
+        double protein=0;
+        double carbo=0;
+        double fat=0;
         for (Product prod : listOfProduct) {
+            fat+=prod.getFat()*9;
+            protein+=prod.getProtein()*4;
+            carbo+=prod.getCarbohydrates()*4;
             summary+=(prod.getCarbohydrates()*4)
                     + (prod.getProtein()*4)
                     + (prod.getFat()*9);
-
         }
+        System.out.println("Protein overall: "+protein);
+        System.out.println("Carbo overall: "+carbo);
+        System.out.println("Fat overall: "+fat);
         System.out.println("FULL MACRO: "+summary);
     }
 
